@@ -1,6 +1,6 @@
 import random
 from visual import *
-import main
+
 VEICULO_ALTURA = 250
 
 
@@ -41,5 +41,7 @@ def houve_colisao(carro_posicao, carro2_posicao):
 
 
 # Questão 8, item 1
-def subir_nivel():
-  pass # remova esse comando e escreva seu codigo
+def subir_nivel(velocidade):
+  velocidade = velocidade + 0.5 
+  print (f"Subiu de nível - Velocidade{velocidade}")
+  return velocidade

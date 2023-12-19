@@ -1,12 +1,12 @@
 # Questão 2, importações
 import pygame
 from pygame.locals import *
-import mecanica 
+import mecanica
 import visual
 
 #  Questão 3, inicializações
 janela = visual.inicializar_jogo()
-
+visual.inicializar_musica()
 carro = visual.inicializar_carro('jogador')
 carro2 = visual.inicializar_carro('oponente')
 carro_loc = visual.posicionar_carro(carro, visual.FAIXA_DIREITA, visual.JANELA_ALTURA * 0.8) 
@@ -42,9 +42,22 @@ while esta_executando:
   visual.atualizar_tela()
   
   # Questão 7, item 2
-  
+  bateu= mecanica.houve_colisao(carro_loc, carro2_loc)
+  if bateu == True:
+    print ("GAME OVER!")
+    break
+
+
   
   # Questão 8, itens 2 e 3
+  if contador >= 5000:
+    velocidade = mecanica.subir_nivel(velocidade)
+    contador = 0
+  contador += 1
 
+  
 
 # Questão 9
+visual.encerrar_jogo
+
+
